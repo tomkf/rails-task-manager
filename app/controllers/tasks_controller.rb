@@ -26,6 +26,7 @@ def update
 @edit_task = Task.find(params[:id])
  @edit_task.update(task_params)
  redirect_to tasks_path
+ params[:task][:completed] == '1' ? @edit_task.update(completed: true) : @edit_task.update(completed: false)
 end
 
 def task_params
