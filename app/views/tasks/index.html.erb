@@ -1,10 +1,10 @@
 <h1>Your task: </h1>
 <% @tasks.each do |item|  %>
 <% if item.completed == false %>
-<input type="checkbox" checked>  <%= link_to item.title, show_path(item.id) %>
+<input type="checkbox" checked>  <%= link_to item.title, task_path(item.id) %>
  </input>
 <% else %>
- <input type="checkbox"> <%= link_to item.title, show_path(item.id) %>
+ <input type="checkbox"> <%= link_to item.title, task_path(item.id) %>
  </input>
  <% end %>
 <% end %>

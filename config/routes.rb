@@ -7,9 +7,9 @@ Rails.application.routes.draw do
 
   get "/tasks/:id/edit", to: "tasks#edit", as: :edit
 
-  patch "/tasks/:id", to: "tasks#update", as: :task
+  get "/tasks/:id", to: "tasks#show", as: :task
 
-  get "/tasks/:id", to: "tasks#show", as: :show
+  post "/tasks", to: "tasks#create"
 
-  post "/tasks", to: "tasks#create", as: :create
+  patch "/tasks/:id", to: "tasks#update"
 end

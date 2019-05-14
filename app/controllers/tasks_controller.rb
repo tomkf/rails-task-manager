@@ -22,6 +22,12 @@ def edit
  @edit_task = Task.find(params[:id])
 end
 
+def update
+@edit_task = Task.find(params[:id])
+ @edit_task.update(task_params)
+ redirect_to tasks_path
+end
+
 def task_params
  params.require(:task).permit(:title, :details)
 end
